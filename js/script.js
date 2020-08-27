@@ -7,3 +7,14 @@ var parola = prompt("inserisci una parola");
 var check = checkPalindrom(parola);
 
 // 3. scrivo se la parola è o non è un palindromo
+if (check){
+  alert("è un palindromo");
+} else {
+  alert("non è un palindromo");
+}
+
+// 4.provo creare funzione per check
+function checkPalindrom(parola) {
+  var check = true;
+  for (var i = 0; i < parola.length; i++)
+  // dubbi su come procedere
