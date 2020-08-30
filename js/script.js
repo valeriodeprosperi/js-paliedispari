@@ -1,20 +1,26 @@
+// Palidroma
 // Chiedere all’utente di inserire una parola
 // Creare una funzione per capire se la parola inserita è palindroma
 
-// 1.chiedo a utente di inserire la parola
-var parola = prompt("inserisci una parola");
-// 2. creo var per controllo parola
-var check = checkPalindrom(parola);
-
-// 3. scrivo se la parola è o non è un palindromo
-if (check){
-  alert("è un palindromo");
+// 1. Chiedere all’utente di inserire una parola
+var parola = prompt("Inserisci una parola");
+// 2. Facciamo il reverse della parola inserita dall'utente
+var parolaCapovolta = capovolgiParola(parola.toLowerCase());
+// 3. Controllare se le due parole sono uguali
+// 4. Stampare a video se la parola è palindroma oppure no
+if(parola == parolaCapovolta) {
+  console.log("la parola è palindroma");
 } else {
-  alert("non è un palindromo");
+  console.log("la parola non è palindroma");
 }
 
-// 4.provo creare funzione per check
-function checkPalindrom(parola) {
-  var check = true;
-  for (var i = 0; i < parola.length; i++)
-  // dubbi su come procedere
+/*
+  Funzione che capovolge una stringa
+*/
+function capovolgiParola(stringa) {
+  var stringaCapovolta = "";
+  for (var i = stringa.length - 1; i >= 0; i--) {
+    stringaCapovolta += stringa[i];
+  }
+  return stringaCapovolta;
+}
